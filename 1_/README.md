@@ -6,7 +6,7 @@
 
 La ligne 6 déclare r comme un alias faisant référence à x.
 La ligne 7 change la valeur de r, et de ce fait, la valeur de x en la valeur de y, i.e. 3.0.
-La ligne 8 change la valeur de la variable y, ce sui n'affecte pas la valeur de r ni de x. 
+La ligne 8 change la valeur de la variable y, ce qui n'affecte pas la valeur de r ni de x. 
 
 # 2. Programmation : Articles de magasin
 ### 2.2.1
@@ -16,4 +16,4 @@ L'intrus dans la liste est celui passé par valeur. En effet, il ne modifie la v
 
 # 3. Références et retour de fonction
 
-La linge `swapPrices( readItem(), readItem() )` provoque une erreur lors de la compilation car `swapPrices` demande des références vers `Item` or le retour de la fonction `readItem` est un objet temporaire, et faire référence à un objet temporaire est relativement inutile.
+La ligne `swapPrices( readItem(), readItem() )` provoque une erreur lors de la compilation car `swapPrices` demande des références vers `Item` or le retour de la fonction `readItem` est un objet temporaire, et faire référence à un objet temporaire est relativement inutile.
