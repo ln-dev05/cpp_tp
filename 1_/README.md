@@ -7,6 +7,7 @@
 La ligne 6 déclare r comme un alias faisant référence à x.
 La ligne 7 change la valeur de r, et de ce fait, la valeur de x en la valeur de y, i.e. 3.0.
 La ligne 8 change la valeur de la variable y, ce sui n'affecte pas la valeur de r ni de x. 
+
 # 2. Programmation : Articles de magasin
 ### 2.2.1
 

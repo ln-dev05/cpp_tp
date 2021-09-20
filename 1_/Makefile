@@ -12,7 +12,7 @@ OBJS = $(patsubst $(SRC_PATH)/%.cpp, $(OBJ_PATH)/%.o, $(SRCS))
 EXEC = tp1
 
 .PHONY: all clean MAKE_DIR
-all: clean $(BIN_PATH)/$(EXEC)
+all: MAKE_DIR $(BIN_PATH)/$(EXEC)
 
 $(BIN_PATH)/$(EXEC): $(OBJS)
 	$(CXX) -o $@ $^ 

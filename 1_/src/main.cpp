@@ -31,6 +31,7 @@ int main()
     print_item_array(store, nb_in_store);
 
     print_item(min(store, nb_in_store));
+    #endif
 
     Item items[3] = {
         {74.9, "Nutella"},
@@ -45,8 +46,9 @@ int main()
     trick_bis(items, 3);
     print_item_array(items, 3);
 
+    #if 0
     price_echange(create_item(), create_item());
-
     #endif
+
     return 0;
 }

@@ -4,7 +4,8 @@
 
 using namespace std;
 
-float input_price() {
+float input_price()
+{
     float price;
 
     do {
@@ -15,29 +16,35 @@ float input_price() {
     return price;
 }
 
-void input_price(float *price) {
+void input_price(float *price) 
+{
     do {
         cout << "Give a positive price :" << endl;
         cin >> *price;
     } while (*price < 0);
 }
 
-void input_price(float &price) {
+void input_price(float &price) 
+{
     do {
         cout << "Give a positive price :" << endl;
         cin >> price;
     } while (price < 0);
 }
-namespace useless {
-void input_price(float price) {
-    do {
-        cout << "Give a positive price :" << endl;
-        cin >> price;
-    } while (price < 0);
-}
-}  // namespace useless
 
-Item create_item() {
+namespace useless 
+{
+    void input_price(float price) 
+    {
+        do {
+            cout << "Give a positive price :" << endl;
+            cin >> price;
+        } while (price < 0);
+    }
+} 
+
+Item create_item()
+{
     Item new_item;
 
     cout << "Please give a name to the new item" << endl;
@@ -48,7 +55,8 @@ Item create_item() {
     return new_item;
 }
 
-void fill_item_array(Item *array, int array_size) {
+void fill_item_array(Item *array, int array_size)
+{
     for (int i = 0; i < array_size; i++) {
         array[i] = create_item();
     }
