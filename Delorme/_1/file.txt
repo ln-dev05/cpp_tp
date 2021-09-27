@@ -1,0 +1,8 @@
+./TP1_isma.tar.gz
+./README.md
+./makefile
+./include/item.h
+./file.txt
+./.vscode/settings.json
+./src/item.cpp
+./src/main.cpp
