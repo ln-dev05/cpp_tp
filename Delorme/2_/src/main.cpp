@@ -39,7 +39,12 @@ int main(void){
     }
 
     Rational inv[15];
-    cout << sumTable(fillInverse(inv, 15), 15) << endl;
+    fillInverse(inv, 15);
+    for (int i = 0; i < 15; i++) {
+        cout << inv[i] << endl;
+    }
+    // cout << sumTable(fillInverse(inv, 15), 15) << endl;
+    
 
-
+    return 0;
 }
