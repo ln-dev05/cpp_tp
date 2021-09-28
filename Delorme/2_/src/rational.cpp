@@ -70,6 +70,22 @@ Rational operator/ (const Rational & a, const Rational & b) {
     return a * inverse;
 }
 
+bool operator< (const Rational & a, const Rational & b) {
+    return (a.getNum() * b.getDen()) < (b.getNum() * a.getDen())
+}
+
+bool operator> (const Rational & a, const Rational & b) {
+    return (a.getNum() * b.getDen()) > (b.getNum() * a.getDen())
+}
+
+bool operator>= (const Rational & a, const Rational & b) {
+    return (a.getNum() * b.getDen()) >= (b.getNum() * a.getDen())
+}
+
+bool operator<= (const Rational & a, const Rational & b) {
+    return (a.getNum() * b.getDen()) <= (b.getNum() * a.getDen())
+}
+
 
 Rational Rational::operator+ (const Rational & b) const {
     std::cout << "a.+(b) " << std::endl;
@@ -84,3 +100,11 @@ Rational Rational::operator- (const Rational & b) const {
 Rational Rational::operator- () const {
     return Rational(-this->getNum(), this->getDen());
 }
+
+Rational sqr(const Rational & r) {
+    return Rational(r.getNum() * r.getNum(), r.getDen() * r.getDen());
+}
+
+Rational & rmax(const Rational & a, const Rational & b) {
+    return  a >= b ? a : b;
+})
