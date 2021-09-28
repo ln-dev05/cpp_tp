@@ -31,16 +31,27 @@ Rational::~Rational() {
     std::cout << "---Rational(" << _num << "," << _den << ")" << std::endl;
 }
 
-Rational Rational::operator^(const int & exp) const {
+Rational & Rational::operator=(const Rational & other) {
+    if (this == &other) {
+        return *this;
+    }
+
+    this->_num = other.getNum();
+    this->_den = other.getDen();
+
+    return *this;
+}
+
+Rational Rational::pow(const int & exp) const {
 
     if (exp < 0) {
-        return this->getInverse()^(-exp);
+        return this->getInverse().pow(-exp);
     } else if (exp == 1) {
         return *this;
     } else if (exp % 2 == 1) {
-        return *(this) * ((*this)^(exp-1));
+        return *(this) * this->pow(exp-1);
     } else {
-        return (*(this)^(exp/2)) * (*(this)^(exp/2));
+        return this->pow(exp/2) * this->pow(exp/2);
     }
 }
 
@@ -70,22 +81,25 @@ Rational operator/ (const Rational & a, const Rational & b) {
     return a * inverse;
 }
 
+bool operator== (const Rational & a, const Rational & b) {
+    return (a.getNum() * b.getDen()) == (b.getNum() * a.getDen());
+}
+
 bool operator< (const Rational & a, const Rational & b) {
-    return (a.getNum() * b.getDen()) < (b.getNum() * a.getDen())
+    return (a.getNum() * b.getDen()) < (b.getNum() * a.getDen());
 }
 
 bool operator> (const Rational & a, const Rational & b) {
-    return (a.getNum() * b.getDen()) > (b.getNum() * a.getDen())
+    return (a.getNum() * b.getDen()) > (b.getNum() * a.getDen());
 }
 
 bool operator>= (const Rational & a, const Rational & b) {
-    return (a.getNum() * b.getDen()) >= (b.getNum() * a.getDen())
+    return a > b || a == b;
 }
 
 bool operator<= (const Rational & a, const Rational & b) {
-    return (a.getNum() * b.getDen()) <= (b.getNum() * a.getDen())
+    return a < b || a == b;
 }
-
 
 Rational Rational::operator+ (const Rational & b) const {
     std::cout << "a.+(b) " << std::endl;
@@ -102,9 +116,26 @@ Rational Rational::operator- () const {
 }
 
 Rational sqr(const Rational & r) {
-    return Rational(r.getNum() * r.getNum(), r.getDen() * r.getDen());
+    return r.pow(2);
 }
 
-Rational & rmax(const Rational & a, const Rational & b) {
-    return  a >= b ? a : b;
-})
+const Rational & rmax(const Rational & a, const Rational & b) {
+    return  (a >= b) ? a : b;
+}
+
+Rational sumTable(const Rational tab [], const int size) {
+    Rational sum;
+    for (int i = 0; i < size; i++) {
+        sum = sum + tab[i];
+    }
+
+    return sum;
+}
+
+Rational * fillInverse(Rational tab[], const int size) {
+    for (int i = 1; i < size; i++) {
+        tab[i] = Rational(1,i);
+    }
+
+    return tab;
+}

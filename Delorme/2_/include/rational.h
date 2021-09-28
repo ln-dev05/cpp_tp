@@ -33,20 +33,39 @@ class Rational {
 
     void display(std::ostream & out) const;
 
-    friend std::ostream & operator<< (std::ostream & out, const Rational & r);
+    Rational pow(const int & exp) const;
 
-    Rational operator^(const int & exp) const;
+    friend std::ostream & operator<< (std::ostream & out, const Rational & r);
 
     Rational operator+ (const Rational & b) const;
 
     Rational operator- (const Rational & b) const;
 
     Rational operator- () const;
+
+    Rational & operator= (const Rational & r);
+
 };
 
 Rational operator* (const Rational & a, const Rational & b);
 
 Rational operator/ (const Rational & a, const Rational & b);
+
+Rational sqr(const Rational & r);
+
+const Rational & rmax(const Rational & a, const Rational & b);
+
+bool operator< (const Rational & a, const Rational & b);
+
+bool operator> (const Rational & a, const Rational & b);
+
+bool operator<= (const Rational & a, const Rational & b);
+
+bool operator>= (const Rational & a, const Rational & b);
+
+Rational sumTable(const Rational tab [], const int size);
+
+Rational * fillInverse(Rational tab [], const int size);
 
 
 #endif

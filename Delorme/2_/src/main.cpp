@@ -3,33 +3,40 @@
 
 using namespace std;
 
-
-Rational sqr(const Rational & r) {
-    return r^2;
-}
-
-
 int main(void){
 
     if (false) {
-        Rational s(long(1), long(4));
-        cout << s << endl;
-        cout << s.getInverse() << endl;
-
-        Rational t(long(1), long(3));
-
-        cout << (s+t) << endl;
-        cout << (s*t) << endl;
-        cout << (s-t) << endl;
-        cout << (s/t) << endl;
-
-        cout << (s^4) << endl;
-
-        Rational r(-s);
+        Rational r(long(1), long(4));
         cout << r << endl;
+        cout << r.getInverse() << endl;
+
+        Rational s(long(1), long(3));
+
+        cout << (r+s) << endl;
+        cout << (r*s) << endl;
+        cout << (r-s) << endl;
+        cout << (r/s) << endl;
+
+        cout << r.pow(4) << endl;
+
+        Rational t(-s);
+        cout << t << endl;
+
+        Rational u(1, 4);
+        cout << sqr(u) << endl;
+
+        Rational v(1, 8);
+        Rational w(3, 4);
+
+        v = rmax(v + w, v * w);
+        cout << v << endl;
+
+        // max(v, w) = Rational(0, 1);
     }
 
-    Rational r(1, 4);
-    cout << sqr(r) << endl;
+    Rational tab[5] = {{1,1},{2,1},{3,1},{4,1},{5,1}};
+    Rational sum = sumTable(tab, 5);
+    cout << sum << endl;
+
 
 }
