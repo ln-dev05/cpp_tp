@@ -133,7 +133,7 @@ Rational sumTable(const Rational tab [], const int size) {
 }
 
 Rational * fillInverse(Rational tab[], const int size) {
-    for (int i = 1; i < size; i++) {
+    for (int i = 1; i <= size; i++) {
         tab[i] = Rational(1,i);
     }
 

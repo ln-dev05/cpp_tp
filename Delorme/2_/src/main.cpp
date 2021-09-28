@@ -32,11 +32,14 @@ int main(void){
         cout << v << endl;
 
         // max(v, w) = Rational(0, 1);
+
+        Rational tab[5] = {{1,1},{2,1},{3,1},{4,1},{5,1}};
+        Rational sum = sumTable(tab, 5);
+        cout << sum << endl;
     }
 
-    Rational tab[5] = {{1,1},{2,1},{3,1},{4,1},{5,1}};
-    Rational sum = sumTable(tab, 5);
-    cout << sum << endl;
+    Rational inv[15];
+    cout << sumTable(fillInverse(inv, 15), 15) << endl;
 
 
 }
