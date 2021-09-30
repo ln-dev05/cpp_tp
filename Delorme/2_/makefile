@@ -1,5 +1,5 @@
 CC=g++
-CCFLAGS=-Wall -Wextra -ansi -pedantic -std=c++11 -g -I./include -fno-elide-constructor
+CCFLAGS=-Wall -Wextra -ansi -pedantic -std=c++11 -g -I./include -fno-elide-constructors
 
 BIN=./bin
 OBJ=./obj

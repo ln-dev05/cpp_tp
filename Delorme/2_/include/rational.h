@@ -11,7 +11,9 @@ class Rational {
 
     public:
     Rational();
+    Rational(long num);
     Rational(long num, long den);
+
     Rational(const Rational & r);
     ~Rational();
 

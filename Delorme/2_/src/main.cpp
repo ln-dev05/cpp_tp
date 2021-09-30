@@ -36,15 +36,14 @@ int main(void){
         Rational tab[5] = {{1,1},{2,1},{3,1},{4,1},{5,1}};
         Rational sum = sumTable(tab, 5);
         cout << sum << endl;
-    }
 
-    Rational inv[15];
-    fillInverse(inv, 15);
-    for (int i = 0; i < 15; i++) {
-        cout << inv[i] << endl;
+        Rational inv[15];
+        fillInverse(inv, 15);
+        cout << sumTable(fillInverse(inv, 15), 15) << endl;
     }
-    // cout << sumTable(fillInverse(inv, 15), 15) << endl;
     
+    Rational r(3);
+    cout << r << endl;
 
     return 0;
 }

@@ -13,6 +13,9 @@ long Rational::pgcd(long a, long b) {
     return Rational::pgcd(b, a % b);
 }
 
+
+Rational::Rational(long num) : _num(num), _den(0) {}
+
 Rational::Rational(long num, long den) {
     std::cout << "+++Rational(" << num << "," << den << ")" << std::endl;
      long g = Rational::pgcd(num, den);
