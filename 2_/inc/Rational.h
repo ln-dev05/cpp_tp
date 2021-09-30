@@ -9,7 +9,8 @@ private:
     long _num;
     long _den;
 public:
-    Rational(long num = 0, long den = 1);
+    Rational();
+    Rational(const long num, const long den);
     ~Rational();
     Rational(const Rational & other);
 
@@ -19,12 +20,14 @@ public:
     inline void print(std::ostream & out) const;
     inline Rational inverse() const;
 
-    Rational pow(const Rational & R, int n);
+    Rational pow(int n) const;
 
-    Rational operator+(const Rational & right);
-    Rational operator-(const Rational & right);
-    Rational operator*(const Rational & right);
-    Rational operator/(const Rational & right);
+
+    Rational & operator=(const Rational & r  );
+    Rational operator+(const Rational & right) const;
+    Rational operator-(const Rational & right) const;
+    Rational operator*(const Rational & right) const;
+    Rational operator/(const Rational & right) const;
     Rational operator-();
     friend std::ostream& operator<<(std::ostream & out, const Rational & r);
 
@@ -56,5 +59,10 @@ inline Rational Rational::inverse() const
     return new_rational;
 }
 
+Rational sqr(const Rational& r);
+
+const Rational& rmax(const Rational& a, const Rational& b);
+
+Rational sum(const Rational tab[], const int size);
 
 #endif // H_RATIONAL
