@@ -1,4 +1,8 @@
 .vscode
 *.zip
 *.tar.gz
-*.tgz
+*.tgz	 
+Delorme/*/bin
+Delorme/*/obj
+Lemair/*/bin
+Lemair/*/obj
