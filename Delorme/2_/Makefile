@@ -8,7 +8,7 @@ INC=./include
 
 EXEC=TP2
 
-all: $(EXEC)
+all: MAKE_DIR $(EXEC)
 
 $(EXEC): $(OBJ)/main.o $(OBJ)/rational.o $(INC)/rational.h
 	$(CC) -o $(BIN)/$@ $^ $(LDFLAGS)
@@ -20,14 +20,14 @@ $(OBJ)/rational.o: $(SRC)/rational.cpp $(INC)/rational.h
 	$(CC) -o $@ -c $< $(CCFLAGS)
 
 
+MAKE_DIR:
+	@mkdir -p $(BIN)
+	@mkdir -p $(OBJ)
+
 clean:
 	rm -rf $(OBJ) $(LIB)
 
 properclean: clean
 	rm -rf $(BIN)
 
-archive: properclean
-	find . -type f > file.txt
-	tar -cvf "$(EXEC)_isma.tar.gz" *
-
-.PHONY: all clean properclean
+.PHONY: all MAKE_DIR clean properclean

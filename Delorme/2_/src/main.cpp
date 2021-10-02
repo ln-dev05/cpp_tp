@@ -41,9 +41,8 @@ int main(void){
         fillInverse(inv, 15);
         cout << sumTable(fillInverse(inv, 15), 15) << endl;
     }
-    
-    Rational r(3);
-    cout << r << endl;
+    Rational r(1,2);
+    cout << r + 3 << endl;
 
     return 0;
 }
