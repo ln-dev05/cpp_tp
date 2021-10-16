@@ -2,11 +2,17 @@
 #include "Matrix.h"
 
 using namespace std;
-#if 0
+
+#define TEST_PERSO 1
+
+#if TEST_PERSO
 int main()
 {
     Matrix m(3,3);
     Matrix m2(3, 4);
+
+    if (m.is_square()) cout << "m est carrée" << endl;
+
     cout << "m after init" << endl;
     cout << m << endl;
     cout << "m2 after init" << endl;
@@ -15,8 +21,8 @@ int main()
     cout << "m after m=m2" << endl;
     cout << m << endl;
     //cin >> m;
-    m[0][0] = 5;
-    m2[0][0] = 5;
+    m(0,0) = 5;
+    m2(0,0) = 5;
     cout << "m2 after m2[0][0]=5" << endl;
     cout << m2 << endl;
     cout << "m after m2[0][0]=5" << endl;
@@ -25,8 +31,6 @@ int main()
     cout << m + m2 << endl;
     cout << "m - m2" << endl;
     cout << m - m2 << endl;
-    cout << "m * m2" << endl;
-    cout << m * m2 << endl;
 
     double * tmp_double = new double[4]();
     tmp_double[0] = 2;
@@ -46,7 +50,7 @@ int main()
     return 0;
 }
 #endif
-
+#if !TEST_PERSO
 void foo(Matrix) {}
 int main(int, char *[]) {
     Matrix a, b, c;
@@ -54,3 +58,4 @@ int main(int, char *[]) {
     c = a * b;
     foo(c * c);
 }
+#endif

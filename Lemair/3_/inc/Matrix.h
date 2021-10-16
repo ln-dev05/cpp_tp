@@ -12,14 +12,15 @@ private:
 
 public:
     Matrix(int lines = 0, int columns = 0);
-    Matrix(int lines, int columns, double * data);
-    ~Matrix();
+    Matrix(int l, int c, double* data) : _lines(l), _columns(c), _data(data){};
+    ~Matrix() {delete[] _data;};
     Matrix(const Matrix & matrix);
     Matrix(Matrix && rmatrix);
+
     Matrix & operator=(const Matrix & matrix);
     Matrix & operator=(Matrix && rmatrix);
     double * operator[](const int line) const;
-    
+    double & operator()(const int line, const int column);
     Matrix operator+(const Matrix & matrix) const;
     Matrix operator-(const Matrix & matrix) const;
     Matrix operator-() const;
@@ -27,17 +28,13 @@ public:
     friend std::ostream & operator<<(std::ostream & out, const Matrix & matrix); 
     friend std::istream & operator>>(std::istream & in, Matrix & matrix);
 
-    bool is_square();
+    bool is_square() { return _lines == _columns; };
     Matrix transpose();
 
     void display(std::ostream & out) const;
 
-    double get(const int line, const int column) const;
-    void set(const int line, const int column, const double value);
-
     static Matrix EYE(int size);
 };
-
 
 
 

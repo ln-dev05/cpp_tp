@@ -12,7 +12,7 @@ OBJS := $(OBJ_PATH)/main.o $(OBJ_PATH)/Matrix.o
 
 EXEC = tp3
 
-.PHONY: all clean MAKE_DIR
+.PHONY: all clean MAKE_DIR cl
 
 all: MAKE_DIR $(BIN_PATH)/$(EXEC)
 
@@ -29,7 +29,7 @@ MAKE_DIR:
 	@test -d ./bin || mkdir -p ./bin
 	@test -d ./obj || mkdir -p ./obj
 
-
+cl:clean
 clean: clean_obj
 	rm -rf ./bin/*
 clean_obj:
