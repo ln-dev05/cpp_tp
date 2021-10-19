@@ -1,5 +1,10 @@
 #include "source.h"
+#include "iostream"
 
-Source::Source() {}
+Source::Source() {
+    std::cout << "++Source" << std::endl;
+}
 
-Source::~Source() {}
+Source::~Source() {
+    std::cout << "--Source" << std::endl;
+}
