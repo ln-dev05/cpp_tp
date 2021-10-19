@@ -1,6 +1,5 @@
-CC=g++
-LDFLAGS=
-CCFLAGS=-Wall -Wextra -std=c++11 -I./include -g
+CXX=g++
+CXXFLAGS=-Wall -Wextra -std=c++11 -I./include -g
 
 BIN=./bin
 OBJ=./obj
@@ -19,13 +18,13 @@ DIRECTORY:
 	mkdir -p $(OBJ)
 
 $(OBJ)/matrix.o : $(SRC)/matrix.cpp $(INC)/matrix.h
-	$(CC) -o $@ -c $< $(CCFLAGS)
+	$(CXX) -o $@ -c $< $(CXXFLAGS)
 
-$(OBJ)/main.o : $(SRC)/main.cpp
-	$(CC) -o $@ -c $< $(CCFLAGS)
+$(OBJ)/main.o : $(SRC)/main.cpp  $(INC)/matrix.h
+	$(CXX) -o $@ -c $< $(CXXFLAGS)
 
-$(EXEC) : $(OBJ)/main.o $(OBJ)/matrix.o
-	$(CC) -o $(BIN)/$@ $^ $(CCFLAGS)
+$(EXEC) : $(OBJ)/main.o $(OBJ)/matrix.o $(INC)/matrix.h
+	$(CXX) -o $(BIN)/$@ $^ $(CXXFLAGS)
 
 clean:
 	rm -rf $(OBJ) $(LIB)
