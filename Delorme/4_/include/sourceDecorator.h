@@ -11,7 +11,7 @@ public:
     SourceDecorator(SourceDecorator &) = delete;
     
     virtual ~SourceDecorator();
-    virtual int next() override;
+    virtual int next() = 0;
 
 protected:
     Source * _inner;

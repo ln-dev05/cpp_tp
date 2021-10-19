@@ -1,6 +1,6 @@
 #include "counter.h"
 
-Counter::Counter(int start = 2) :_value(start){}
+Counter::Counter(int start) :_value(start){}
 
 Counter::~Counter(){}
 
