@@ -1,8 +1,10 @@
 #ifndef INTEGER_SOURCE_H
 #define INTEGER_SOURCE_H
 
-class IntegerSource {
+class Source {
 public:
+    Source();
+    virtual ~Source();
     virtual int next() = 0;
 };
 
