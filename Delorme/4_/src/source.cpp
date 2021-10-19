@@ -2,9 +2,9 @@
 #include "iostream"
 
 Source::Source() {
-    std::cout << "++Source" << std::endl;
+    // std::cout << "++Source" << std::endl;
 }
 
 Source::~Source() {
-    std::cout << "--Source" << std::endl;
+    // std::cout << "--Source" << std::endl;
 }

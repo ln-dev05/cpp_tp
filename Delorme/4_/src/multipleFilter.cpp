@@ -2,11 +2,11 @@
 #include "multipleFilter.h"
  
 MultipleFilter::MultipleFilter(Source * inner, int k) : SourceDecorator(inner), _value(k) {
-    std::cout << "++multipleFilter" << std::endl;
+    // std::cout << "++multipleFilter" << std::endl;
 }
 
 MultipleFilter::~MultipleFilter() {
-    std::cout << "--multipleFilter" << std::endl;
+    // std::cout << "--multipleFilter" << std::endl;
 }
 
 int MultipleFilter::next() {

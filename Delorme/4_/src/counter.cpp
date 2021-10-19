@@ -2,11 +2,11 @@
 #include "counter.h"
 
 Counter::Counter(int start) :_value(start){
-    std::cout << "++counter" << std::endl;
+    // std::cout << "++counter" << std::endl;
 }
 
 Counter::~Counter(){
-    std::cout << "--counter" << std::endl;
+    // std::cout << "--counter" << std::endl;
 }
 
 int Counter::next() {

@@ -1,18 +1,15 @@
-#include "iostream"
-#include "counter.h"
+#include "sieve.h"
 #include "multipleFilter.h"
+#include "iostream"
 
 
-using namespace std;
+Sieve::Sieve(Source * inner) : SourceDecorator(inner) {}
 
-int main(void) {
+Sieve::~Sieve(){}
 
-    Source * sieve = new MultipleFilter(new Counter(), 2);
+int Sieve::next() {
+    int val = _inner->next();
+    _inner = new MultipleFilter(_inner, val);
 
-    for (int i = 0; i < 20; i++) {
-        cout << sieve->next() << endl;
-    } 
-
-    delete sieve;
-
+    return val;
 }
