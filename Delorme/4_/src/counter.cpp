@@ -10,6 +10,6 @@ Counter::~Counter(){
 }
 
 int Counter::next() {
-    _value++;
-    return _value - 1;
+    ++Source::nb_call_to_next;
+    return _value++;
 }

@@ -1,3 +1,4 @@
+#include <iostream>
 #include "lastDigitSegregation.h"
 
     
@@ -9,6 +10,7 @@ LastDigitSegregation::LastDigitSegregation(Source * inner, const int k) : Source
 LastDigitSegregation::~LastDigitSegregation() {}
 
 int LastDigitSegregation::next() {
+    ++Source::nb_call_to_next;
 
     int val = 0;
     do {

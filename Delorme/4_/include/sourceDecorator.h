@@ -14,6 +14,7 @@ public:
     virtual int next() = 0;
 
 protected:
+
     Source * _inner;
 
 };

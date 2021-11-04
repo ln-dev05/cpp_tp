@@ -3,9 +3,8 @@
 # Date: 19-10-2021
 
 CXX=g++
-CXXFLAGS=-Wall -Wextra -ansi -pedantic -std=c++11 -I./include -g
+CXXFLAGS=-Wall -Wextra -pedantic -std=c++11 -I./include -g
 
-LIB=./lib
 BIN=./bin
 OBJ=./obj
 SRC=./src
@@ -35,14 +34,14 @@ $(EXEC): $(OBJ_FILE)
 $(OBJ)/%.o: $(SRC)/%.cpp $(HEADER_FILE)
 	$(CXX) -o $@ -c $< $(CXXFLAGS)
 
+computeGraph: all
+	$(BIN)/$(EXEC)
+	gnuplot graph.gp
+
 clean:
-	rm -rf $(OBJ) $(LIB)
+	rm -rf $(OBJ)
 
 properclean: clean
-	rm -rf $(BIN)
+	rm -rf $(BIN) data1.txt data2.txt prime_number.png
 
-archive: properclean
-	find . -type f > file.txt
-	tar -cvf "$(EXEC)_isma.tar.gz" *
-
-.PHONY: all prepare directory file clean properclean
+.PHONY: all prepare directory file clean properclean computeGraph

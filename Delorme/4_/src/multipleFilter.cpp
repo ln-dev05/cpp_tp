@@ -10,6 +10,8 @@ MultipleFilter::~MultipleFilter() {
 }
 
 int MultipleFilter::next() {
+    ++Source::nb_call_to_next;
+
     int val = 0;
     
     do {
