@@ -1,6 +1,5 @@
 #include <fstream>
 #include <iostream>
-#include <string>
 
 #include "counter.h"
 #include "lastDigitSegregation.h"
