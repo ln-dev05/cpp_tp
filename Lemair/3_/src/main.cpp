@@ -20,7 +20,9 @@ int main()
     m = m2;
     cout << "m after m=m2" << endl;
     cout << m << endl;
-    //cin >> m;
+    if (0) {
+        cin >> m;
+    }
     m(0,0) = 5;
     m2(0,0) = 5;
     cout << "m2 after m2[0][0]=5" << endl;
@@ -50,7 +52,9 @@ int main()
     return 0;
 }
 #endif
+
 #if !TEST_PERSO
+
 void foo(Matrix) {}
 int main(int, char *[]) {
     Matrix a, b, c;

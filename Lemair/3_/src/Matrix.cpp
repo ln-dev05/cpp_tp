@@ -109,7 +109,7 @@ ostream& operator<<(ostream& out, const Matrix& matrix) {
 istream& operator>>(istream& in, Matrix& matrix) {
     int lines;
     int columns;
-    cout << "hello I will help you to create a matrix <3" << endl;
+    cout << "hello I will help you to create a matrix" << endl;
 
     cout << "lines :" << endl;
     in >> lines;

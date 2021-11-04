@@ -6,8 +6,6 @@ INC_PATH :=./inc
 CXX      := g++
 CXXFLAGS := -g -Wall -pedantic -Wextra --std=c++11 -fno-elide-constructors
 
-
-
 OBJS := $(OBJ_PATH)/main.o $(OBJ_PATH)/Matrix.o
 
 EXEC = tp3
@@ -31,8 +29,8 @@ MAKE_DIR:
 
 cl:clean
 clean: clean_obj
-	rm -rf ./bin/*
+	rm -rf ./bin/
 clean_obj:
-	rm -rf ./obj/*
+	rm -rf ./obj/
 
 
