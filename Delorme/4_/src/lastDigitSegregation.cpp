@@ -2,7 +2,9 @@
 
     
     
-LastDigitSegregation::LastDigitSegregation(Source * inner) : SourceDecorator(inner) {}
+LastDigitSegregation::LastDigitSegregation(Source * inner, const int k) : SourceDecorator(inner) {
+    _value = k;
+}
 
 LastDigitSegregation::~LastDigitSegregation() {}
 
@@ -13,7 +15,8 @@ int LastDigitSegregation::next() {
         
         val = _inner->next();
 
-    } while (val % 10 == 7 || val % 10 == 3);
+    } while (val % 10 == _value);
+
     return val;
 
 }

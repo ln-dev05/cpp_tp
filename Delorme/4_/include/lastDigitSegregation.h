@@ -7,12 +7,15 @@ class LastDigitSegregation : public SourceDecorator {
     
 public:
 
-    LastDigitSegregation(Source * inner);
+    LastDigitSegregation(Source * inner, const int k);
     LastDigitSegregation(LastDigitSegregation &) = delete;
 
     virtual ~LastDigitSegregation();
     virtual int next() override;
 
+private:
+
+    int _value;
 };
 
 

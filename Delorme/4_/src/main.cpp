@@ -2,6 +2,7 @@
 #include "sieve.h"
 #include "counter.h"
 #include "multipleFilter.h"
+#include "lastDigitSegregation.h"
 
 
 using namespace std;
@@ -24,18 +25,16 @@ int main(void) {
     if (false) {
 
         //nombre inférieurs à 30 qui ne sont ni pair ni multiple de 5
-        Source * filtre1 = new MultipleFilter(new Counter(), 2);
-        Source * filtre2 = new MultipleFilter(filtre1, 5);
+        Source * filtre = new MultipleFilter(new MultipleFilter(new Counter(), 2), 5);
 
         for (int i = 0; i < 20; i++) {
-            cout << filtre2->next() <<endl;
+            cout << filtre->next() <<endl;
         }
 
-        delete filtre2;
-        // attention à ne pas delete filtre1, car il est déjà delete lors de la déconstruction du filtre 2
+        delete filtre;
     }   
 
-    if (true) {
+    if (false) {
 
         // Nombre premier jusqu'a 7000
         Source * sieve = new Sieve(new Counter());
@@ -47,5 +46,19 @@ int main(void) {
         } while (val < 7000);
 
         delete sieve;
+    }
+
+    if (true) {
+
+        //nombre premier qui finissent par 3 et 7 
+        Source * filtre = new LastDigitSegregation(new LastDigitSegregation(new Sieve(new Counter()), 3), 7);
+        int val;
+
+        do {
+            val = filtre->next();
+            cout << val << endl;
+        } while(val < 200);
+
+        delete filtre;
     }
 }
