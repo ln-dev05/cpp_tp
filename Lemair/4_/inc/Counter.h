@@ -20,6 +20,7 @@ Counter::Counter(const int initial_value) {
 }
 
 int Counter::next_value() {
+    IntSource::INC_NEXT_VALUE_USAGE();
     _current_value++;
     return _current_value-1;
 }
