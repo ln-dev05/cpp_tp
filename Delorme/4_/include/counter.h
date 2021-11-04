@@ -6,7 +6,7 @@
 class Counter : public Source {
 public:
 
-    Counter(int start = 2);
+    Counter(const int start = 2);
     Counter(Counter &) = delete;
     virtual ~Counter();
 

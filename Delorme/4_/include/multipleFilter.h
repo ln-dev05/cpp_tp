@@ -6,7 +6,7 @@
 class MultipleFilter : public SourceDecorator {
 public:
 
-    MultipleFilter(Source * inner, int k); 
+    MultipleFilter(Source * inner, const int k); 
     MultipleFilter(MultipleFilter &) = delete;
 
     virtual ~MultipleFilter();

@@ -1,7 +1,7 @@
 #include "iostream"
 #include "counter.h"
 
-Counter::Counter(int start) :_value(start){
+Counter::Counter(const int start) :_value(start){
     // std::cout << "++counter" << std::endl;
 }
 

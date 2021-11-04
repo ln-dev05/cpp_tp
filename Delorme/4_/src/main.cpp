@@ -35,7 +35,9 @@ int main(void) {
         // attention à ne pas delete filtre1, car il est déjà delete lors de la déconstruction du filtre 2
     }   
 
-    if (false) {
+    if (true) {
+
+        // Nombre premier jusqu'a 7000
         Source * sieve = new Sieve(new Counter());
         int val;
 

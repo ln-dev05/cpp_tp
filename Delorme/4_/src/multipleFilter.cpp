@@ -1,7 +1,7 @@
 #include "iostream"
 #include "multipleFilter.h"
  
-MultipleFilter::MultipleFilter(Source * inner, int k) : SourceDecorator(inner), _value(k) {
+MultipleFilter::MultipleFilter(Source * inner, const int k) : SourceDecorator(inner), _value(k) {
     // std::cout << "++multipleFilter" << std::endl;
 }
 
