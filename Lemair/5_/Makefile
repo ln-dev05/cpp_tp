@@ -30,8 +30,10 @@ MAKE_DIR :
 
 
 OBJ+=$(ODIR)/main.o
+OBJ+=$(ODIR)/Item.o
 
-$(ODIR)/main.o: $(SDIR)/main.cpp $(IDIR)/Comparator.h $(IDIR)/Heap.h
+$(ODIR)/main.o: $(SDIR)/main.cpp $(IDIR)/Comparator.h $(IDIR)/Heap.h $(IDIR)/Item.h 
+$(ODIR)/Item.o: $(SDIR)/Item.cpp $(IDIR)/Item.h
 
 $(ODIR)/%o:
 	$(CXX) $(CXXFLAGS) $< -c -o $@

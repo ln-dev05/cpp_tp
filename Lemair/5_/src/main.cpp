@@ -3,8 +3,28 @@
 #include <time.h>
 #include "Comparator.h"
 #include "Heap.h"
+#include "Item.h"
+#include <vector>
+#include <fstream>
+#include <cstring>
 
 using namespace std;
+
+void load_file(Item * items, int size) {
+    ifstream f("items.txt");
+    string text;
+    for (int i = 0; i < size; ++i) {
+        getline(f, text);
+        std::size_t pos = text.find(" ");
+        items[i].reference = stoul(text.substr(0, pos));
+        text = text.substr(pos+1);
+        pos = text.find(" ");
+        items[i].name = text.substr(0, pos);
+        text = text.substr(pos+1);
+        items[i].price = stof(text);
+    }
+    f.close();
+}
 
 int main() {
     #if 0
@@ -34,6 +54,7 @@ int main() {
         cerr << e << '\n';
     }
     #endif
+
     #if 0
     try {
         Heap<int, GreaterThan<int>> heap(20);
@@ -58,6 +79,8 @@ int main() {
         cerr << e << '\n';
     }
     #endif
+
+    #if 0
     int size = 50;
     int array[size];
     std::srand(time(nullptr));
@@ -71,4 +94,20 @@ int main() {
         cout << array[i] << ",";
     }
     cout << "]" << endl;
+    #endif
+    try {
+ 
+        int size = 23;
+        Item array[23];
+        load_file(array, size);
+        heapSort<Item, LessThan<Item>>(array, size);
+
+        cout << "[" << endl;
+        for (int i = 0; i < size; ++i) {
+            cout << "\t" <<  array[i] << "," << endl;
+        }
+        cout << "]" << endl;
+    } catch (const char*& e) {
+        cerr << e << '\n';
+    }
 }
