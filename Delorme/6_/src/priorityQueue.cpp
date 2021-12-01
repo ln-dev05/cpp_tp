@@ -3,7 +3,7 @@
 #include <vector>
 #include <time.h>
 
-#include "iteratorFunction.hpp"
+#include "_iteratorFunction.hpp"
 #include "priorityQueue.hpp"
 
 using namespace std;

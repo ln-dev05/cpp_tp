@@ -34,5 +34,4 @@ void printIterator(T begin, T end) {
     std::cout << std::endl;
 }
 
-
 #endif

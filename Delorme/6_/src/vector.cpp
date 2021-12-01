@@ -7,6 +7,7 @@ using namespace std;
 int main(void) {
 
     vector<double> vectorOfDoubles;
+
     int oldCapacity = -1;
     int currentCapacity;
 

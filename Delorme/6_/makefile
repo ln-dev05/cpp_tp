@@ -14,7 +14,7 @@ SRC_FILE = $(wildcard $(SRC)/*.cpp)
 OBJ_FILE = $(patsubst $(SRC)/%.cpp, $(OBJ)/%.o, $(SRC_FILE))
 
 DIRECTORY=bin obj include src
-EXEC=iterator vector priorityQueue
+EXEC=iterator vector priorityQueue map algorithmes
 
 all: prepare $(EXEC)
 
@@ -23,13 +23,19 @@ prepare: | $(DIRECTORY)
 $(DIRECTORY): 
 	mkdir -p $@
 
-iterator: $(OBJ)/iterator.o $(OBJ)/iteratorFunction.o $(INC)/iteratorFunction.hpp
+iterator: $(OBJ)/iterator.o $(OBJ)/_iteratorFunction.o $(INC)/_iteratorFunction.hpp
 	$(CXX) -o $(BIN)/$@ $^ $(CXXFLAGS)
 
 vector: $(OBJ)/vector.o
 	$(CXX) -o $(BIN)/$@ $^ $(CXXFLAGS)
 
-priorityQueue: $(OBJ)/priorityQueue.o $(OBJ)/iteratorFunction.o $(INC)/iteratorFunction.hpp
+priorityQueue: $(OBJ)/priorityQueue.o $(OBJ)/_iteratorFunction.o $(INC)/_iteratorFunction.hpp
+	$(CXX) -o $(BIN)/$@ $^ $(CXXFLAGS)
+
+map: $(OBJ)/map.o
+	$(CXX) -o $(BIN)/$@ $^ $(CXXFLAGS)
+
+algorithmes: $(OBJ)/algorithmes.o $(OBJ)/_iteratorFunction.o $(INC)/_iteratorFunction.hpp $(INC)/algorithmes.hpp
 	$(CXX) -o $(BIN)/$@ $^ $(CXXFLAGS)
 
 $(OBJ)/%.o: $(SRC)/%.cpp
