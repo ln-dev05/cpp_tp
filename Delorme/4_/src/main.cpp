@@ -21,6 +21,7 @@ void countCall(const char* name, const bool resetBetween) {
         file << i << " " << Source::nb_call_to_next << endl;
     }
 
+    delete sieve;
     file.close();
 }
 
