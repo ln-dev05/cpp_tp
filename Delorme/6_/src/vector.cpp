@@ -19,7 +19,6 @@ int main(void) {
             oldCapacity = currentCapacity;
             cout << "Capacity: " << currentCapacity << " | Size: " << vectorOfDoubles.size() << endl; 
         }
-
     }
 
     return EXIT_SUCCESS;

@@ -16,11 +16,11 @@ int main() {
     vector<int> vectorOfSortedInt;
 
     fillVector(vectorOfInt, 40);
-    printContainer<vector<int>>(vectorOfInt);
+    printIterator(vectorOfInt.begin(), vectorOfInt.end());
 
     vectorOfSortedInt = sortVector<int, greater<int>>(vectorOfInt);
 
-    printContainer<vector<int>>(vectorOfSortedInt);
+    printIterator(vectorOfSortedInt.begin(), vectorOfSortedInt.end());
 
 
 }

@@ -11,11 +11,13 @@ int main(void) {
 
     vector<int> vectorOfInt;
     fillVector(vectorOfInt, 20);
-    printContainer<vector<int>>(vectorOfInt);
+    std::cout << "Vector : ";
+    printIterator(vectorOfInt.begin(), vectorOfInt.end());
 
     set<int> setOfInt;
     fillSet(setOfInt, 1000);
-    printContainer<set<int>>(setOfInt);
+    std::cout << "Set : ";
+    printIterator(setOfInt.begin(), setOfInt.end());
 
     stack<int> stackOfInt;
     fillStack(stackOfInt, 20);
