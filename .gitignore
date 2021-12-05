@@ -6,3 +6,5 @@ Delorme/*/bin
 Delorme/*/obj
 Lemair/*/bin
 Lemair/*/obj
+*.pdf
+a.out

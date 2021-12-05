@@ -43,3 +43,6 @@ $(BDIR)/$(EXEC): $(OBJ)
 
 clean:
 	rm -f $(ODIR)/*.o
+	rm -f $(BDIR)/*
+	rmdir $(ODIR)
+	rmdir $(BDIR)
